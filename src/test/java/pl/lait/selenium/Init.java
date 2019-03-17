@@ -14,10 +14,15 @@ public class Init {
 		//"C:\\LAIT\\chromedriver\\chromedriver.exe"
 		
 		System.setProperty("webdriver.chrome.driver", "/Users/adam/Documents/LAIT/chromedriver");
+		if(driver == null) {
+			driver = new ChromeDriver();
+			driver.get("http://newtours.demoaut.com/");
+			return driver;
+		} else {
+			return driver;
+		}
 		
-		driver = new ChromeDriver();
-		driver.get("http://newtours.demoaut.com/");
-		return driver;
+		
 	}
 	
 	public static void log(String msg) {
@@ -27,6 +32,7 @@ public class Init {
 	public static void close() {
 		driver.close();
 		driver.quit();
+		driver = null;
 	}
 	public static void sleep(int seconds) {
 		try {
