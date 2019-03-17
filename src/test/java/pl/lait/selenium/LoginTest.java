@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import pl.lait.pageObjects.LoginPage;
 import pl.lait.pageObjects.ReservationPage;
+import pl.lait.pageObjects.ReservationPage2;
 
 public class LoginTest {
 	
@@ -36,6 +37,15 @@ public class LoginTest {
 		rp.passCount("2");
 		rp.firstClass();
 		rp.submit();
+		//2gi etap
+		ReservationPage2 rp2 = new ReservationPage2();
+		rp2.selectFlights(2, 4);
+		rp2.submit();
+		//3 etap
+		rp2.pass0("Adam", "AAAAAA", "KSML");
+		Init.sleep(1);
+		rp2.submit2();
+		
 	}
 
 	@After
