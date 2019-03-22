@@ -1,5 +1,6 @@
 package pl.lait.Steps;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -28,6 +29,7 @@ public class LoginPageStepDefs {
 		// upewniam się, że jestem na właściwej stronie
 		String pageTitle = driver.getTitle();
 		Init.log("Current page title: " + pageTitle);
+		Assert.assertTrue("Nie jesteś na tej stronie, której oczekujemy", pageTitle.equals("Welcome: Mercury Tours "));
 	}
 
 	@When("^I fill the login form with login \"([^\"]*)\" and pass \"([^\"]*)\"$")
