@@ -28,10 +28,16 @@ public class LoginPageStepDefs {
 	public void i_open_main_page() throws Throwable {
 		// upewniam się, że jestem na właściwej stronie
 		String pageTitle = driver.getTitle();
+		String properPageTitle = "Welcome: Mercury Tours";
 		Init.log("Current page title: " + pageTitle);
-		Assert.assertTrue("Nie jesteś na tej stronie, której oczekujemy", pageTitle.equals("Welcome: Mercury Tours "));
+		//Assert.assertTrue("Nie jesteś na tej stronie, której oczekujemy", pageTitle.equals("Welcome: Mercury Tours "));
+		Assert.assertTrue("Niepoprawny tytuł strony", pageTitle.equals("Welcome: Mercury Tours"));
+		
+		//properPageTitle.equals(pageTitle);
+		//pageTitle.equals(properPageTitle);
+	
 	}
-
+	
 	@When("^I fill the login form with login \"([^\"]*)\" and pass \"([^\"]*)\"$")
 	public void i_fill_the_login_form_with_login_and_pass(String arg1, String arg2) throws Throwable {
 		lp.goToLoginPage();
@@ -51,7 +57,7 @@ public class LoginPageStepDefs {
 	@When("^I choose one way trip type$")
 	public void i_choose_one_way_trip_type() throws Throwable {
 		rp.oneWay();
-		driver.findElement(By.xpath("adfasdfadsfdfdfdfdsf")).click();
+		//driver.findElement(By.xpath("adfasdfadsfdfdfdfdsf")).click();
 	}
 
 	@When("^I start from \"([^\"]*)\" at month: \"([^\"]*)\" day \"([^\"]*)\"$")
