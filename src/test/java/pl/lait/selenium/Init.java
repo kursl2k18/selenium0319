@@ -29,7 +29,7 @@ public class Init {
 		}
 		
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setPlatform(Platform.MAC);
+		//cap.setPlatform(Platform.MAC);
 		System.setProperty("webdriver.chrome.driver", "/Users/adam/Documents/LAIT/chromedriver");
 		if(driver == null) {
 			//driver = new ChromeDriver();
